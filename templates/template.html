@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			h3 {font-size:16px; line-height: 10px; letter-spacing:1px;}
+			table {
+				border: 1px solid black;
+				border-collapse: collapse;
+			}
+			th,td {
+				border: 1px solid black;				
+			} 
+			th {
+				background: #CCCCCC;
+			}
+		</style>
+	</head>
+	<body>
+		<h3>{{ project_name }}项目测试版本信息</h3>
+		<div id='tb1'>
+			<table>
+				<tr>
+					<th>测试节点</th>
+					<td>{{ build_no }}</td>
+				</tr>
+				<tr>
+					<th>Jenkins地址</th>
+					<td>{{ build_url }}</td>
+				</tr>
+			</table>
+		</div>
+		<h3>测试用例统计</h3>
+		<div id='tb2'>
+			<table>
+				<thead>
+					<th>执行用例数</th>
+					<th>通过用例数</th>
+					<th>失败用例数</th>
+					<th>通过率</th>
+					<th>测试结果</th>
+				</thead>
+				<tr>
+					<td>{{ tot }}</td>
+					<td>{{ pa }}</td>
+					<td>{{ fa }}</td>
+					<td>{{ rate }}%</td>
+					<td>{{ result }}</td>
+				</tr>
+			</table>
+		</div>
+		<h3>测试详情可点击以下链接</h3>
+		<div>
+			<a href="https://www.baidu.com">rf报告</a>
+			<a href="{{ log_url }}">rf日志</a>
+		</div>
+	</body>
+</html>
