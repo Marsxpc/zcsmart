@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 # *************************************
-# @Time    : 2020/4/6 22:15
+# @Time    :
 # @Author  :
 # @Desc    :这是python测试类写法转rf文件的脚本，主要转换两种文件。
 # 第一种是__st__.py文件，它是测试套件的初始化，对应__init__.robot，当__st__.py文件存在时，必须定义suite_setup和
@@ -145,12 +145,9 @@ def py2rf(basepath):
 
 
 if __name__ == '__main__':
-    fpath = r'D:\视频\代码\autotest_hyrobot\cases\功能1 - 副本.py'
-    fpath1 = r'C:\Users\rg_16\Downloads\Compressed\autotest_bysms_02\cases\__st__.py'
-    basepath = r'D:\tmp\yj_auto\cases'
+    basepath = r'D:\工作\pyfile\zcsmart\cases'
     # print(commpy2rf(fpath))
     # print(stpy2rf(fpath1))
-
     # clear_robot_file(basepath)
 
     py2rf(basepath)

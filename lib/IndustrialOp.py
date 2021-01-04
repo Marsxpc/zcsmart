@@ -18,10 +18,10 @@ def readData(filePath, lineNum):
     with open(filePath, 'rb+') as f:
         lines = f.read().splitlines()
         last_lines = lines[-lineNum:]
-        for i in range(lineNum):
-            for j in range(len(last_lines[i]) + 2):
-                f.seek(-1, os.SEEK_END)
-                f.truncate()
+        # for i in range(lineNum):
+        #     for j in range(len(last_lines[i]) + 2):
+        #         f.seek(-1, os.SEEK_END)
+        #         f.truncate()
     return [one.decode('utf8') for one in last_lines]
 
 
@@ -65,6 +65,42 @@ class IndstrialOp:
     def filling(body, key, iv, head, token, headers, payload):
         # 新灌装
         url = f'http://{ghost}/zcs_gateway/trace/i/s/industry/connect/codes'
+        response = requests.post(url=url, json=payload, headers=headers)
+        encData = response.json()['encData']
+        return encData
+
+    @staticmethod
+    @zsj.decorator
+    def warehousing(body, key, iv, head, token, headers, payload):
+        # 新入库
+        url = f'http://{ghost}/zcs_gateway/trace/i/s/industry/inbound/delivery'
+        response = requests.post(url=url, json=payload, headers=headers)
+        encData = response.json()['encData']
+        return encData
+
+    @staticmethod
+    @zsj.decorator
+    def exWarehousing(body, key, iv, head, token, headers, payload):
+        # 新出库
+        url = f'http://{ghost}/zcs_gateway/trace/i/s/industry/outbound/delivery'
+        response = requests.post(url=url, json=payload, headers=headers)
+        encData = response.json()['encData']
+        return encData
+
+    @staticmethod
+    @zsj.decorator
+    def warehouseShifting(body, key, iv, head, token, headers, payload):
+        # 移库
+        url = f'http://{ghost}/zcs_gateway/trace/i/s/industry/api/transfer/delivery'
+        response = requests.post(url=url, json=payload, headers=headers)
+        encData = response.json()['encData']
+        return encData
+
+    @staticmethod
+    @zsj.decorator
+    def codeIsRecord(body, key, iv, head, token, headers, payload):
+        # 查询码是否已记录
+        url = f'http://{ghost}/zcs_gateway/trace/i/s/industry/api/code/check'
         response = requests.post(url=url, json=payload, headers=headers)
         encData = response.json()['encData']
         return encData

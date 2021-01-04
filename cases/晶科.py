@@ -13,12 +13,13 @@ import time
 
 class C001:
     name = '接口-码印刷'
+    tags = ['smoke']
 
     def setup(self):
-        pass
+        print('执行C001用例的初始化')
 
     def teardown(self):
-        pass
+        print('执行C001用例的清除')
 
     def teststeps(self):
         # 大码卷编号规则 (L+班组号+工控机编号+日期(yyyyMMdd)+自增序号)
@@ -90,15 +91,6 @@ class C001:
                                headers=jk_ipc.headers, payload=jk_ipc.payload, token=jk_ipc.token)
         assert ret['message'] == 'request_success','码印刷接口调用失败'
 
-
-class C002:
-    name = ''
-
-    def setup(self):
-        pass
-
-    def teardown(self):
-        pass
-
-    def teststeps(self):
-        pass
+if __name__ == '__main__':
+    c = C001()
+    c.teststeps()

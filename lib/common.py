@@ -37,6 +37,7 @@ ck_stageid = 182
 yk_collect = 310
 yk_stageid = 181
 productid = 425
+parentstageid = 110
 xh_KEY_NO = '94a1854d-c069-48e6-9911-6c6923ae4114'
 xh_key = 'jkaIAdsclH7XL181gTSV5Qlq'
 xh_iv = 'At8O7xVuYJd2TvUu'
