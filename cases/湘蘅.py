@@ -78,7 +78,6 @@ class C101:
              }]
         ret = xh_ipc.filling(body=body, key=xh_key, iv=xh_iv, head=xh_ipc.head,
                                headers=xh_ipc.headers, payload=xh_ipc.payload, token=xh_ipc.token)
-        print(ret)
         assert ret['message'] == 'request_success', '新灌装接口调用失败'
 
 
@@ -232,7 +231,7 @@ class C103:
                                         {'defaultValue': '湘A001,湘A002,湘A003',
                                          'propertyId': 508,
                                          'propertyName': '运送车车牌号',
-                                         'stageId': 0}],
+                                         'stageId': ck_stageid}],
                          'stageId': ck_stageid},
           'timestamp': timestamp},
  'record': {'productId': productid,
@@ -240,9 +239,15 @@ class C103:
             'wareHouseName': '出库仓A',
             'wareHouseNum': 16,
             'wareHouseTime': timestamp}}
+
+        import pprint
+        print('*'*20)
+        pprint.pprint(body)
+        print('*' * 20)
         ret = xh_ipc.exWarehousing(body=body, key=xh_key, iv=xh_iv, head=xh_ipc.head,
                                  headers=xh_ipc.headers, payload=xh_ipc.payload, token=xh_ipc.token)
-        assert ret['message'] == 'request_success', '新入库接口调用失败'
+        print(ret)
+        assert ret['message'] == 'request_success', '新出库接口调用失败'
 
 
 class C104:
@@ -335,5 +340,5 @@ class C105:
 
 
 if __name__ == '__main__':
-    c = C105()
+    c = C103()
     c.teststeps()

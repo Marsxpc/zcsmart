@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.0.4 (Python 3.6.2 on win32)" generated="20211105 09:17:14.412">
+<suite id="s1" name="Cases" source="D:\工作\pyfile\zcsmart\cases">
+<kw name="Suite Setup" library="M" type="setup">
+<msg timestamp="20211105 09:17:20.182" level="INFO">执行测试套件的初始化</msg>
+<status status="PASS" starttime="20211105 09:17:15.327" endtime="20211105 09:17:20.182"></status>
+</kw>
+<suite id="s1-s1" name="盐业标准" source="D:\工作\pyfile\zcsmart\cases\盐业标准">
+<kw name="Suite Setup" library="M" type="setup">
+<msg timestamp="20211105 09:17:30.923" level="INFO" html="yes">请重新插拔ukey！击回车键结束</msg>
+<msg timestamp="20211105 12:19:07.670" level="INFO" html="yes">b'I/elog            [11-05 12:19:07.519  tid:0001] (elog_start:212)EasyLogger V2.1.0 is initialize success.'</msg>
+<msg timestamp="20211105 12:19:07.671" level="INFO" html="yes">b'D/ukey            [11-05 12:19:07.527  tid:0001] (main:510)dest:ccddeeff8899aabb44556677001122'</msg>
+<msg timestamp="20211105 12:19:07.672" level="INFO" html="yes">b'D/ukey            [11-05 12:19:07.528  tid:0001] (main:511)bin_dest:aabbccddeeff'</msg>
+<msg timestamp="20211105 12:19:07.674" level="INFO" html="yes">b'D/ukey            [11-05 12:19:07.528  tid:0001] (main:512)cpk_domain_info size:1784'</msg>
+<msg timestamp="20211105 12:19:07.675" level="INFO" html="yes">b'I/ukey            [11-05 12:19:07.528  tid:0001] (main:516)using pack file :D:\\\xb9\xa4\xd7\xf7\\20201106\\app\xbc\xb0pack\\\xb2\xe2\xca\xd4\\ukey010080550001-jzybiz-test.pack'</msg>
+<msg timestamp="20211105 12:19:07.676" level="INFO" html="yes">b'W/ukey            [11-05 12:19:07.542  tid:0001] (main:519)ret = ckeys_ukey_open(&amp;handle, NULL) failed(0x02)'</msg>
+<msg timestamp="20211105 12:19:07.676" level="INFO" html="yes">b'\xc7\xeb\xb0\xb4\xc8\xce\xd2\xe2\xbc\xfc\xbc\xcc\xd0\xf8. . . '</msg>
+<msg timestamp="20211105 12:19:07.677" level="INFO">执行测试套件的初始化
+
+input:</msg>
+<msg timestamp="20211105 12:19:07.747" level="FAIL">ukey灌装失败！</msg>
+<status status="FAIL" starttime="20211105 09:17:21.259" endtime="20211105 12:19:07.747"></status>
+</kw>
+<suite id="s1-s1-s1" name="盐业打码操作" source="D:\工作\pyfile\zcsmart\cases\盐业标准\盐业打码操作.robot">
+<test id="s1-s1-s1-t1" name="盐业标准-单个产品溯码打码">
+<status status="FAIL" starttime="20211105 12:19:07.757" endtime="20211105 12:19:07.764" critical="yes">Parent suite setup failed:
+ukey灌装失败！</status>
+</test>
+<status status="FAIL" starttime="20211105 12:19:07.748" endtime="20211105 12:19:07.768">Parent suite setup failed:
+ukey灌装失败！</status>
+</suite>
+<kw name="Suite Teardown" library="M" type="teardown">
+<msg timestamp="20211105 12:19:16.794" level="INFO">执行测试套件的清除</msg>
+<status status="FAIL" starttime="20211105 12:19:07.783" endtime="20211105 12:19:16.795">Execution terminated by signal</status>
+</kw>
+<status status="FAIL" starttime="20211105 09:17:20.182" endtime="20211105 12:19:16.795">Suite setup failed:
+ukey灌装失败！
+
+Also suite teardown failed:
+Execution terminated by signal</status>
+</suite>
+<kw name="Suite Teardown" library="M" type="teardown">
+<msg timestamp="20211105 12:19:20.832" level="INFO">执行测试套件的清除</msg>
+<errors>
+<msg timestamp="20211105 12:19:20.832" level="ERROR">Execution stopped by user.</msg>
+</errors>
+</robot>
